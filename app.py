@@ -3,7 +3,7 @@ import joblib
 application = Flask(__name__)
 # Load the trained model into memory
 model = joblib.load('sentiment_model.joblib')
-@app.route('/predict', methods=['POST'])
+@application.route('/predict', methods=['POST'])
 def predict():
  # Parse the incoming JSON request
  data = request.get_json()
